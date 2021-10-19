@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service-test
+  labels:
+    app: nginx
+    version: green
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+    version: green
+  ports:
+    - port: 9000
+      targetPort: 80
